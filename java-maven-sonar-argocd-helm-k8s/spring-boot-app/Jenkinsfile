@@ -50,12 +50,11 @@ pipeline {
         stage('Update Deployment File') {
             environment {
                 GIT_REPO_NAME = "Jen-Argocd"
-                GIT_USER_NAME = "parvej31"
+                GIT_USER_NAME = "parvej3112"
             }
             steps {
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                     sh '''
-                        git checkout main || git checkout -b main
                         git config user.email "parvejshaikh31122001@gmail.com"
                         git config user.name "parvej3112"
                         BUILD_NUMBER=${BUILD_NUMBER}
